@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dahili ve Harici JavaScript</title>
+</head>
+<body>
+ 
+  <button onclick="dahili_selamla()">Dahili Tıkla</button>
+  <button onclick="harici_selamla()">Harici Tıkla</button>
+ 
+  <script>
+    function dahili_selamla() {
+      alert("Dahili selamlama !");
+      /* alert yukarıda bir kutu veriyor ve içine Dahili selamlama ! yazar*/
+    }
+  </script>
+  <script src="harici.js"></script>
+  <!-- yol belirliyor harici.js ye atiyor ve aynı kutuyu veriyor ve içine Harici selamlama ! yazar -->
+
+  <!-- scriptlerin hepsini en sonda yazmalı !! -->
+</body>
+</html>

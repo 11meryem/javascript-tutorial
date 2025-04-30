@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container mt-4">
+
+        <form action="kaydet.php" method="post"> <!--method post verileri gizli olarak gönderiyor, get açık olarak-->
+            
+            <div class="row g-4">
+                <!-- ad -->
+                <div class="col-md-6">
+                    <label for="ad" class="form-label">Ad</label>
+                    <input type="text" class="form-control" id="ad" required> <!--required doldurması zorunlu alan-->
+                </div>
+
+                <!-- soyad -->
+                <div class="col-md-6">
+                    <label for="soyad" class="form-label">Soyad</label>
+                    <input type="text" class="form-control" id="soyad" required>
+                </div>
+
+                <!-- eposta email -->
+                <div class="col-md-6">
+                    <label for="mail" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="mail" required>
+                </div>
+
+                <!-- radio buttonda name'ler aynı olması lazım id,for farkli (id'ye ne yazdıysak for'a da onu yazicaz)-->
+                <div class="col-md-3">
+                    <!-- tek secili button radio 1 -->
+                    <div class="form-check"> <!-- form-check-inline eklersek yan yana gelirler-->
+                        <input type="radio" class="form-check-input" id="sikayet" name="tercihler">
+                        <label for="sikayet" class="form-check-label">Şikayet</label>
+                    </div>
+
+                    <!-- tek secili button radio 2 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="oneri" name="tercihler" checked>
+                        <label for="oneri" class="form-check-label">Öneri</label>
+                    </div>
+
+                </div>
+
+                <!-- uzun yazı textarea -->
+                <div class="col-md-12">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="yazi" style="height: 100px"></textarea>
+                        <label for="yazi">Şikayet ya da önerilerinizi yazabilirsiniz</label>
+                    </div>
+                </div>
+                
+                <!-- açılır liste + ilk yazana bir daha basamayacak-->
+                <div class="col-md-6">
+
+                    <select id="sehirler" name="sehir" class="form-select">
+
+                    <!-- selected ilk başta seçili olarak verir disabled gozukur ama onu secemezsin-->
+                      <option disabled selected>Şehirler seçiniz</option> 
+                      <option>Ankara</option>
+                      <option >İstanbul</option>
+                      <option >Kastamonu</option>
+                      <option >Malatya</option>
+                    </select>
+                </div>
+
+                <!-- birden fazla secilen button checkbox -->
+                <div class="col-md-12">
+
+                    <p>Beğendiğiniz Pasta Çeşidi</p>
+
+                    <!-- pasta1 -->
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="cikolatalipasta">
+                        <label class="form-check-label" for="cikolatalipasta">
+                          Çikolatalı Pasta
+                        </label>
+                    </div>
+                    <!-- pasta2 -->
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="meyvelipasta" >
+                        <label class="form-check-label" for="meyvelipasta">
+                          Karışık Meyveli Pasta
+                        </label>
+                    </div>
+                    <!-- pasta3 -->
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="muzlupasta" >
+                        <label class="form-check-label" for="muzlupasta">
+                          Muzlu Pasta
+                        </label>
+                    </div>
+                    <!-- pasta4 -->
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="cileklipasta" >
+                        <label class="form-check-label" for="cileklipasta">
+                          Çilekli Pasta
+                        </label>
+                    </div>
+                    <!-- pasta5 -->
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="profiterolpasta" >
+                        <label class="form-check-label" for="profiterolpasta">
+                          Profiterol Pasta
+                        </label>
+                    </div>
+                    <!-- pasta6 -->
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="bombapasta" >
+                        <label class="form-check-label" for="bombapasta">
+                          Bomba Pasta
+                        </label>
+                    </div>
+                </div>
+
+                <!-- button temizle gönder -->
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-outline-success w-100">Gönder</button> <!-- w-100 hepsini kaplıyor width100-->
+                </div>
+                <div class="col-md-6">
+                    <button type="reset" class="btn btn-outline-danger w-100">Temizle</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
